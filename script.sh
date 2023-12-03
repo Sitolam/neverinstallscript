@@ -16,3 +16,5 @@ wget https://github.com/Sitolam/neverinstallscript/releases/download/v1.0.0/anki
 7z x anki_plugins.7z
 cp -r addons21 ~/.local/share/Anki2/addons21
 
+
+sudo apt install mplayer
