@@ -14,5 +14,5 @@ sudo ./install.sh
 
 wget https://github.com/Sitolam/neverinstallscript/releases/download/v1.0.0/anki_plugins.7z
 7z x anki_plugins.7z
-cp -r addons21 ~/.local/share/Anki2
+cp -r addons21 ~/.local/share/Anki2/addons21
 
