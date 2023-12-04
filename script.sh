@@ -18,3 +18,13 @@ cp -r addons21 ~/.local/share/Anki2/addons21
 
 
 sudo apt install mplayer
+
+
+sudo mkdir -p /etc/apt/keyrings
+curl -sSf https://download.spotify.com/debian/pubkey_7A3A762FAFD4A51F.gpg | gpg --dearmor | sudo tee /etc/apt/keyrings/spotify.gpg > /dev/null
+echo "deb [arch=amd64 signed-by=/etc/apt/keyrings/spotify.gpg] http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
+sudo apt update
+sudo apt install spotify-client
+
+# The spotify package is currently broken and installs files owned by uid 1000, fix it
+dpkg -L spotify-client | sudo xargs chown --no-dereference root:root
